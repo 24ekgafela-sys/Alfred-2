@@ -1,0 +1,1 @@
+export default async () => Response.json({ status: "ok", assistant: "ALFRED 2.0" });
