@@ -1,1 +1,1 @@
-export default async () => Response.json({ status: "ok", assistant: "ALFRED 2.0" });
+export default async () => Response.json({ status: "ok", assistant: "JARVIS 2.0" });
