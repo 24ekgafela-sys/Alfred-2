@@ -7,6 +7,7 @@ export default async (req) => {
   // ANTHROPIC_API_KEY is the variable used by the FreeAIAPIKey Claude Code setup.
   const key =
     Netlify.env.get("FREEAI_API_KEY") ||
+    Netlify.env.get("apifreeaiapikey") ||
     Netlify.env.get("ANTHROPIC_API_KEY") ||
     Netlify.env.get("OPENAI_API_KEY");
 
@@ -14,7 +15,7 @@ export default async (req) => {
     return Response.json(
       {
         error:
-          "JARVIS needs your FreeAIAPIKey credential. Add ANTHROPIC_API_KEY in Netlify environment variables, then redeploy.",
+          "JARVIS needs your FreeAIAPIKey credential. Add FREEAI_API_KEY in Netlify environment variables, then redeploy.",
       },
       { status: 503 }
     );
